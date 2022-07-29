@@ -129,7 +129,7 @@ Ext.define('MyApp.view.MyTabPanel', {
                             displayField: 'nomeunidade',
                             pageSize: 1,
                             store: 'Unidades',
-                            valueField: 'codfil',
+                            valueField: 'codunidade',
                             listeners: {
                                 beforerender: 'onComboboxBeforeRender',
                                 change: 'onComboboxChange1'
@@ -194,6 +194,7 @@ Ext.define('MyApp.view.MyTabPanel', {
                         },
                         {
                             xtype: 'gridcolumn',
+                            width: 300,
                             dataIndex: 'nomeunidade',
                             text: 'Unidade'
                         },
@@ -476,7 +477,7 @@ Ext.define('MyApp.view.MyTabPanel', {
         var form = Ext.ComponentQuery.query('[itemId=formUsuario]')[0].getForm();
                     	if (form.isValid()) {
                         	//var data = Ext.JSON.encode(form.getValues(false));
-                            debugger;
+        //                     debugger;
                         	var data = form.getValues(false);
 
                             form.submit({
@@ -516,6 +517,7 @@ Ext.define('MyApp.view.MyTabPanel', {
         var form = Ext.ComponentQuery.query('[itemId=formUsuario]')[0].getForm();
         var grid =Ext.ComponentQuery.query('[itemId=gridUsuarios]')[0];
         form.reset();
+        grid.getStore().removeAll();
     },
 
     onComboboxChange: function(field, newValue, oldValue, eOpts) {

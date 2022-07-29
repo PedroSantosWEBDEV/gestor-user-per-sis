@@ -204,7 +204,7 @@
                                                     "var form = Ext.ComponentQuery.query('[itemId=formUsuario]')[0].getForm();",
                                                     "            \tif (form.isValid()) {",
                                                     "                \t//var data = Ext.JSON.encode(form.getValues(false));",
-                                                    "                    debugger;",
+                                                    "//                     debugger;",
                                                     "                \tvar data = form.getValues(false);",
                                                     "",
                                                     "                    form.submit({",
@@ -285,7 +285,8 @@
                                                     "// de",
                                                     "var form = Ext.ComponentQuery.query('[itemId=formUsuario]')[0].getForm();",
                                                     "var grid =Ext.ComponentQuery.query('[itemId=gridUsuarios]')[0];",
-                                                    "form.reset();"
+                                                    "form.reset();",
+                                                    "grid.getStore().removeAll();"
                                                 ],
                                                 "name": "click",
                                                 "scope": "me"
@@ -407,7 +408,7 @@
                                 "layout|anchor": "100%",
                                 "pageSize": 1,
                                 "store": "Unidades",
-                                "valueField": "codfil"
+                                "valueField": "codunidade"
                             },
                             "configAlternates": {
                                 "fieldLabel": "string",
@@ -781,11 +782,13 @@
                             "codeClass": null,
                             "userConfig": {
                                 "dataIndex": "nomeunidade",
-                                "text": "Unidade"
+                                "text": "Unidade",
+                                "width": 300
                             },
                             "configAlternates": {
                                 "dataIndex": "datafield",
-                                "text": "string"
+                                "text": "string",
+                                "width": "auto"
                             },
                             "name": "MyColumn4",
                             "designerId": "17097b3c-11be-473f-bcb4-96d85d051232"
