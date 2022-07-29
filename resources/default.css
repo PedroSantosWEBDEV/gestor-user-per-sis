@@ -1,0 +1,128 @@
+
+
+/* Tabelas #CCCCCC */
+
+.celula {
+    vertical-align: top;
+}
+
+.x-form-readonly .x-form-text {
+    background: #FF0000 !important;
+}
+
+.treeLargeFont .x-tree-node { font-size: 16px !important; }
+
+.x-action-col-cell img.excluir {
+    background-image: url( ../resources/images/iconsExt/icons/excluir_.png);
+    height: 16px;
+    width: 16px;
+}
+
+.x-action-col-cell img.pasta {
+    background-image: url( ../resources/images/iconsExt/icons/folder.png);
+    height: 16px;
+    width: 16px;
+}
+
+.pesquisar {
+    background-image: url( ../resources/images/iconsExt/icons/pesquisa.png) !important;
+}
+/* ambiente-teste/ext-codeigniter/images/classic/32x32/home_core.png */
+.home_core {
+    background-image: url( ../resources/images/classic/32x32/home_core.png) !important;
+}
+
+.usuarios_core {
+    background-image: url( ../resources/images/classic/32x32/usuarios_core.png) !important;
+}
+
+.sistemas_core {
+    background-image: url( ../resources/images/classic/32x32/sistemas_core.png) !important;
+}
+
+.sistemas_grid_core {
+    background-image: url( ../resources/images/classic/16x16/gnome-fs-client.gif) !important;
+}
+
+.permissoes_core {
+    background-image: url( ../resources/images/classic/32x32/permissao_core.png) !important;
+}
+
+.permissoes_grid_core {
+    background-image: url( ../resources/images/classic/16x16/unlock.gif) !important;
+}
+
+.perfis_core {
+    background-image: url( ../resources/images/classic/32x32/perfis_core.png) !important;
+}
+
+.perfis_grid_core {
+    background-image: url( ../resources/images/classic/16x16/add_group.gif) !important;
+}
+
+.unidades_core {
+    background-image: url( ../resources/images/classic/32x32/unidade_core.png) !important;
+}
+
+.configs_core {
+    background-image: url( ../resources/images/classic/32x32/config_core.png) !important;
+}
+
+.segmento_core {
+    background-image: url( ../resources/images/iconsExt/icons/segmento_core.png) !important;
+}
+
+.localiza_core {
+    background-image: url( ../resources/images/iconsExt/icons/localiza_core.png) !important;
+}
+
+.notaEntrada {
+    background-image: url( ../resources/images/classic/16x16/folder_inbox.gif) !important;
+}
+
+.configMenu {
+    background-image: url( ../resources/images/iconsExt/icons/cog.png) !important;
+}
+
+.cadUsuarios {
+    background-image: url( ../resources/images/iconsExt/icons/user_add.png) !important;
+}
+
+.sairSistema {
+    background-image: url( ../resources/images/classic/16x16/exit.gif) !important;
+}
+
+
+.add {
+    background-image:url(../resources/images/add.gif) !important;
+}
+
+.btnAdicionar {
+    background-image:url(../resources/images/iconsExt/icons/add1.png ) !important;
+}
+
+.btnReset {
+    background-image:url( ../resources/images/iconsExt/icons/reset.png ) !important;
+}
+
+.copiarPerfil {
+    background-image: url( ../../../../../images/iconsExt/icons/copiarPermissao.png ) !important;
+}
+
+.save {
+    background-image:url( ../../../../../images/classic/16x16/save_all.gif) !important;
+}
+
+.icon-grid {
+    background-image:url(../../../images/grid.png) !important;
+}
+
+.icon-quadro {
+    background-image:url(../../../../../images/iconsExt/icons/chart_pie.png) !important;
+}
+
+
+
+.green-row{ background-color: #CCCCCC !important; }
+.green-orange{ background-color: #FFDEAD !important; }
+

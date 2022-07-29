@@ -1,0 +1,24 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "basePath": "ext/",
+        "designer|userClassName": "Library",
+        "libraryRequires": [
+            "font-awesome"
+        ],
+        "theme": "MyClassicTheme"
+    },
+    "configAlternates": {
+        "basePath": "uri",
+        "designer|userClassName": "string",
+        "libraryRequires": "typedarray",
+        "theme": "string"
+    },
+    "name": "Library",
+    "designerId": "053db9b0-e277-4024-a9e6-efb9fefd47d3"
+}

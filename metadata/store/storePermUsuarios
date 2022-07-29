@@ -1,0 +1,56 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "storePermUsuarios",
+        "model": "permissoesUsuarios",
+        "storeId": "storePermUsuarios"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyJsonStore",
+    "designerId": "d182d6e8-129e-4ba4-9327-5aa6a1991ce6",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "../../ext-codeigniter/core.php?action=usuario&metodo=listaPermissaoUsuario"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy4",
+            "designerId": "e9cf39f3-5cf4-4b50-a635-12be66b03c11",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "dados"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader4",
+                    "designerId": "1c646eed-2720-496f-b056-9bea7c1f7550"
+                }
+            ]
+        }
+    ]
+}
