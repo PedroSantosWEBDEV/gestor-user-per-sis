@@ -25,10 +25,11 @@ Ext.define('MyApp.view.MyTabPanel', {
         'Ext.form.field.ComboBox',
         'Ext.grid.Panel',
         'Ext.view.Table',
+        'Ext.toolbar.Paging',
+        'Ext.grid.column.Check',
         'Ext.grid.column.Number',
         'Ext.grid.column.Date',
-        'Ext.grid.column.Boolean',
-        'Ext.toolbar.Paging'
+        'Ext.grid.column.Boolean'
     ],
 
     viewModel: {
@@ -41,7 +42,7 @@ Ext.define('MyApp.view.MyTabPanel', {
         {
             xtype: 'panel',
             border: true,
-            title: 'My Tab',
+            title: ' ',
             tabConfig: {
                 xtype: 'tab',
                 iconAlign: 'top',
@@ -62,7 +63,7 @@ Ext.define('MyApp.view.MyTabPanel', {
             id: 'panelUser',
             itemId: 'panelUser',
             padding: 20,
-            title: 'My Tab',
+            title: ' ',
             tabConfig: {
                 xtype: 'tab',
                 iconAlign: 'top',
@@ -209,7 +210,7 @@ Ext.define('MyApp.view.MyTabPanel', {
         },
         {
             xtype: 'panel',
-            title: 'My Tab',
+            title: ' ',
             tabConfig: {
                 xtype: 'tab',
                 iconAlign: 'top',
@@ -222,28 +223,7 @@ Ext.define('MyApp.view.MyTabPanel', {
                     height: 478,
                     padding: 10,
                     title: 'Sistemas',
-                    columns: [
-                        {
-                            xtype: 'gridcolumn',
-                            dataIndex: 'string',
-                            text: 'String'
-                        },
-                        {
-                            xtype: 'numbercolumn',
-                            dataIndex: 'number',
-                            text: 'Number'
-                        },
-                        {
-                            xtype: 'datecolumn',
-                            dataIndex: 'date',
-                            text: 'Date'
-                        },
-                        {
-                            xtype: 'booleancolumn',
-                            dataIndex: 'bool',
-                            text: 'Boolean'
-                        }
-                    ],
+                    store: 'Sistemas',
                     dockedItems: [
                         {
                             xtype: 'toolbar',
@@ -251,7 +231,7 @@ Ext.define('MyApp.view.MyTabPanel', {
                             items: [
                                 {
                                     xtype: 'button',
-                                    text: 'MyButton'
+                                    text: 'Adicionar'
                                 }
                             ]
                         },
@@ -260,6 +240,33 @@ Ext.define('MyApp.view.MyTabPanel', {
                             dock: 'bottom',
                             width: 360,
                             displayInfo: true
+                        }
+                    ],
+                    columns: [
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'descricaosistema',
+                            text: 'Nome'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'titulosistema',
+                            text: 'Titulo'
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'iconesistema',
+                            text: 'Icone(32x32) '
+                        },
+                        {
+                            xtype: 'gridcolumn',
+                            dataIndex: 'linksistema',
+                            text: 'Link'
+                        },
+                        {
+                            xtype: 'checkcolumn',
+                            dataIndex: 'statussistema',
+                            text: 'Ativo?'
                         }
                     ]
                 }

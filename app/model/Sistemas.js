@@ -17,7 +17,7 @@ Ext.define('MyApp.model.Sistemas', {
     extend: 'Ext.data.Model',
 
     requires: [
-        'Ext.data.field.Field'
+        'Ext.data.field.Boolean'
     ],
 
     fields: [
@@ -34,6 +34,7 @@ Ext.define('MyApp.model.Sistemas', {
             name: 'linksistema'
         },
         {
+            type: 'boolean',
             name: 'statussistema'
         },
         {
