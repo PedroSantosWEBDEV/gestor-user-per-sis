@@ -1027,8 +1027,82 @@
                                 "text": "string",
                                 "lockable": "boolean"
                             },
-                            "name": "MyCheck2",
-                            "designerId": "5fc03160-8329-4f72-9d66-8a5e07c1cefd"
+                            "name": "MyCheck",
+                            "designerId": "5fc03160-8329-4f72-9d66-8a5e07c1cefd",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "name": "MyCheckbox",
+                                    "designerId": "8c782e47-3e0c-49ca-8046-bed4a396a4cc",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onCheckboxfieldChange",
+                                                "implHandler": [
+                                                    "var storePermUsuarios = Ext.getStore('Sistemas');",
+                                                    "var form = Ext.ComponentQuery.query('[itemId=formUsuario]')[0].getForm();",
+                                                    "            \tif (form.isValid()) {",
+                                                    "                \t//var data = Ext.JSON.encode(form.getValues(false));",
+                                                    "//                     debugger;",
+                                                    "                \tvar data = form.getValues(false);",
+                                                    "",
+                                                    "                    form.submit({",
+                                                    "                    \tmethod: 'POST',",
+                                                    "                    \tsuccess:function(form, action){",
+                                                    "                    \t\tobj = Ext.JSON.decode(action.response.responseText);",
+                                                    "                    \t\tif(obj.success === true) {",
+                                                    "                    \t\t\tstorePermUsuarios.load();",
+                                                    "\t\t                    \tform.reset();",
+                                                    "                    \t\t} else {",
+                                                    "                    \t\t\tExt.Msg.show({",
+                                                    "                    \t\t\t     title:'Mensagem',",
+                                                    "                    \t\t\t     msg: 'Erro ao cadastrar!',",
+                                                    "                    \t\t\t     buttons: Ext.Msg.OK,",
+                                                    "                    \t\t\t     animateTarget: 'btnCadPermUser',",
+                                                    "                    \t\t\t     icon: Ext.window.MessageBox.QUESTION",
+                                                    "                    \t\t\t});",
+                                                    "                    \t\t}",
+                                                    "                        },",
+                                                    "                        failure: function(form, action) {",
+                                                    "                        \tobj = Ext.JSON.decode(action.response.responseText);",
+                                                    "                        \tExt.Msg.show({",
+                                                    "                \t\t\t     title:'Mensagem',",
+                                                    "                \t\t\t     msg: obj.msg,",
+                                                    "                \t\t\t     buttons: Ext.Msg.OK,",
+                                                    "                \t\t\t     animateTarget: 'btnCadPermUser',",
+                                                    "                \t\t\t     icon: Ext.window.MessageBox.QUESTION",
+                                                    "                \t\t\t});",
+                                                    "                        }",
+                                                    "",
+                                                    "                    });",
+                                                    "                }"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "configAlternates": {
+                                                "fn": "string",
+                                                "implHandler": "code",
+                                                "name": "string",
+                                                "scope": "string"
+                                            },
+                                            "name": "onCheckboxfieldChange",
+                                            "designerId": "358d61e4-ca29-48ed-8589-9bdee746361b"
+                                        }
+                                    ]
+                                }
+                            ]
                         }
                     ]
                 }

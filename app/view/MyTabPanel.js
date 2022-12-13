@@ -27,6 +27,7 @@ Ext.define('MyApp.view.MyTabPanel', {
         'Ext.view.Table',
         'Ext.toolbar.Paging',
         'Ext.grid.column.Check',
+        'Ext.form.field.Checkbox',
         'Ext.grid.column.Number',
         'Ext.grid.column.Date',
         'Ext.grid.column.Boolean'
@@ -266,7 +267,13 @@ Ext.define('MyApp.view.MyTabPanel', {
                         {
                             xtype: 'checkcolumn',
                             dataIndex: 'statussistema',
-                            text: 'Ativo?'
+                            text: 'Ativo?',
+                            editor: {
+                                xtype: 'checkboxfield',
+                                listeners: {
+                                    change: 'onCheckboxfieldChange'
+                                }
+                            }
                         }
                     ]
                 }
@@ -589,6 +596,46 @@ Ext.define('MyApp.view.MyTabPanel', {
         p.extraParams.codsistema = codsistema;
         p.extraParams.codperfil = codperfil;
         store.load();
+    },
+
+    onCheckboxfieldChange: function(field, newValue, oldValue, eOpts) {
+        var storePermUsuarios = Ext.getStore('Sistemas');
+        var form = Ext.ComponentQuery.query('[itemId=formUsuario]')[0].getForm();
+                    	if (form.isValid()) {
+                        	//var data = Ext.JSON.encode(form.getValues(false));
+        //                     debugger;
+                        	var data = form.getValues(false);
+
+                            form.submit({
+                            	method: 'POST',
+                            	success:function(form, action){
+                            		obj = Ext.JSON.decode(action.response.responseText);
+                            		if(obj.success === true) {
+                            			storePermUsuarios.load();
+        		                    	form.reset();
+                            		} else {
+                            			Ext.Msg.show({
+                            			     title:'Mensagem',
+                            			     msg: 'Erro ao cadastrar!',
+                            			     buttons: Ext.Msg.OK,
+                            			     animateTarget: 'btnCadPermUser',
+                            			     icon: Ext.window.MessageBox.QUESTION
+                            			});
+                            		}
+                                },
+                                failure: function(form, action) {
+                                	obj = Ext.JSON.decode(action.response.responseText);
+                                	Ext.Msg.show({
+                        			     title:'Mensagem',
+                        			     msg: obj.msg,
+                        			     buttons: Ext.Msg.OK,
+                        			     animateTarget: 'btnCadPermUser',
+                        			     icon: Ext.window.MessageBox.QUESTION
+                        			});
+                                }
+
+                            });
+                        }
     }
 
 });
